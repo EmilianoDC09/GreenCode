@@ -1,23 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot 4.0.x: compatible con Java 17 a 26 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.7</version>
+        <relativePath/>
+    </parent>
+
     <groupId>com.greencode</groupId>
     <artifactId>greencode</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>greencode</name>
     <packaging>jar</packaging>
+
     <properties>
+        <!-- Bytecode 17: cualquier JDK 17+ puede levantar el backend -->
+        <java.version>17</java.version>
         <antlr4.version>4.9.2</antlr4.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Hay varios main (Main, Runner, GreenCodeApi): este es el de Spring Boot -->
+        <start-class>com.greencode.api.GreenCodeApi</start-class>
     </properties>
+
     <dependencies>
+        <!-- Intérprete original: herramienta y runtime de ANTLR en la misma versión -->
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4</artifactId>
             <version>${antlr4.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr4.version}</version>
+        </dependency>
+
+        <!-- API REST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -37,6 +71,10 @@
                         <argument>-visitor</argument>
                     </arguments>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
