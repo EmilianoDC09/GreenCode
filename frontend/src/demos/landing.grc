@@ -1,0 +1,10 @@
+>> Control térmico del invernadero
+parcela invernadero [
+  brotar #temp tipo clima : 29.5;
+
+  monitorear (#temp supera 28.0)
+  florece [
+    emitir "Ventilación encendida";
+  ]
+]
+cosecha
