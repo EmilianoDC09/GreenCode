@@ -1,0 +1,5 @@
+parcela test [
+    brotar #sensor tipo semilla : "hola mundo";
+    brotar #estado tipo actuador : 25;
+    brotar #suma tipo semilla : #sensor + encendido;
+] cosecha

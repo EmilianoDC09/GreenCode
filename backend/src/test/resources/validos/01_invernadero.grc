@@ -1,0 +1,9 @@
+parcela invernadero_1 [
+    brotar #humedad tipo semilla : 45;
+    brotar #bomba tipo actuador : apagado;
+
+    monitorear (#humedad debajo 50) florece [
+        nutrir #bomba : encendido;
+        emitir #bomba;
+    ]
+] cosecha

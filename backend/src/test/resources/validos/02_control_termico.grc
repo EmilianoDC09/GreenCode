@@ -1,0 +1,13 @@
+parcela control_termico [
+    brotar #temp tipo clima : 26.5;
+    brotar #valvula tipo actuador : apagado;
+
+    nutrir #temp : #temp + 3.0;
+
+    monitorear (#temp supera 28.0)
+    florece [
+        nutrir #valvula : encendido;
+        emitir "Temperatura elevada";
+    ]
+]
+cosecha

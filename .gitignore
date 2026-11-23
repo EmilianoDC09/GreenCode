@@ -1,0 +1,17 @@
+# Java / Maven
+target/
+*.class
+
+# Salida del plugin ANTLR de VS Code (el parser lo genera antlr4-maven-plugin)
+**/.antlr/
+
+# Node / Vite
+node_modules/
+frontend/dist/
+
+# IDEs y sistema
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

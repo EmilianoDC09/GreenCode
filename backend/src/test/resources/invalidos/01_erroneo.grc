@@ -1,0 +1,4 @@
+parcela test [
+    nutrir #temperatura : 30;
+    emitir #temperatura;
+] cosecha
