@@ -1,5 +1,36 @@
 /* GreenCode · Estilos globales*/
 
+/* Fuentes locales (subconjunto latino, licencia OFL en assets/fonts): la plataforma
+   se ve igual sin conexión a internet, como pide la ejecución local. */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('../assets/fonts/manrope-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('../assets/fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('../assets/fonts/jetbrains-mono-latin-wght-italic.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+}
+
 :root {
   /* fondos oscuros */
   --forest-950: #08221a;

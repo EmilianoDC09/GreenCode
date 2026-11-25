@@ -35,20 +35,20 @@ const CARACTERISTICAS = [
 
 // Glosario: cada palabra clave del lenguaje con su significado en el invernadero.
 const GLOSARIO = [
-  { kw: 'Parcela … Cosecha', que: 'Programa', desc: 'Todo programa es una parcela que se siembra y termina en cosecha.' },
-  { kw: 'Brotar', que: 'Declarar', desc: 'Hace brotar una variable: brotar #temp tipo clima : 24.5;' },
-  { kw: 'Nutrir', que: 'Asignar', desc: 'Le da un nuevo valor a una variable que ya brotó.' },
-  { kw: 'Monitorear', que: 'Decidir', desc: 'Florece si se cumple, marchita para otra condición, reposo si ninguna.' },
-  { kw: 'Regar · Madurar', que: 'Repetir', desc: 'Regar mientras haya condición; madurar de un valor a otro por pasos.' },
-  { kw: 'Captar · Emitir', que: 'Entrada / salida', desc: 'Captar lee lecturas del usuario y Emitir muestra mensajes en consola.' },
-  { kw: 'Injerto · Fruto', que: 'Funciones', desc: 'Un injerto recibe parámetros, produce un tipo y devuelve su fruto.' },
+  { kw: 'parcela … cosecha', que: 'Programa', desc: 'Todo programa es una parcela que se siembra y termina en cosecha.' },
+  { kw: 'brotar', que: 'Declarar', desc: 'Hace brotar una variable: brotar #temp tipo clima : 24.5;' },
+  { kw: 'nutrir', que: 'Asignar', desc: 'Le da un nuevo valor a una variable que ya brotó.' },
+  { kw: 'monitorear', que: 'Decidir', desc: 'Florece si se cumple, marchita para otra condición, reposo si ninguna.' },
+  { kw: 'regar · madurar', que: 'Repetir', desc: 'Regar mientras haya condición; madurar de un valor a otro por pasos.' },
+  { kw: 'captar · emitir', que: 'Entrada / salida', desc: 'Captar lee lecturas del usuario y Emitir muestra mensajes en consola.' },
+  { kw: 'injerto · fruto', que: 'Funciones', desc: 'Un injerto recibe parámetros, produce un tipo y devuelve su fruto.' },
 ];
 
 const TIPOS = [
-  { icon: IconThermo, tipo: 'Clima', ej: '26.5', desc: 'Decimales: temperatura, humedad, pH' },
-  { icon: IconDrop, tipo: 'Semilla', ej: '12', desc: 'Enteros: minutos de riego, conteos' },
-  { icon: IconFan, tipo: 'Actuador', ej: 'Encendido', desc: 'Encendido o apagado: válvulas, ventiladores' },
-  { icon: IconSun, tipo: 'Contexto', ej: '"Lote A"', desc: 'Texto: nombres y mensajes' },
+  { icon: IconThermo, tipo: 'clima', ej: '26.5', desc: 'Decimales: temperatura, humedad, pH' },
+  { icon: IconDrop, tipo: 'semilla', ej: '12', desc: 'Enteros: minutos de riego, conteos' },
+  { icon: IconFan, tipo: 'actuador', ej: 'encendido', desc: 'encendido o apagado: válvulas, ventiladores' },
+  { icon: IconSun, tipo: 'contexto', ej: '"Lote A"', desc: 'Texto: nombres y mensajes' },
 ];
 
 export default function Landing() {
@@ -79,7 +79,7 @@ export default function Landing() {
             </div>
             <ul className="hero-checks">
               <li><IconCheck width={16} height={16} /> Sintaxis en español</li>
-              <li><IconCheck width={16} height={16} /> Sin instalación</li>
+              <li><IconCheck width={16} height={16} /> Ejecución con el intérprete real</li>
               <li><IconCheck width={16} height={16} /> Pensado para invernaderos</li>
             </ul>
           </div>
@@ -200,7 +200,7 @@ export default function Landing() {
             <br />
             se escribe en verde.
           </h2>
-          <p className="cta-text">Empieza ahora. Sin instalaciones, sin configuraciones y con todo lo necesario para aprender.</p>
+          <p className="cta-text">Empieza ahora: escribe tu primera parcela y ejecútala contra el intérprete real de GreenCode.</p>
           <Link to="/editor" className="btn btn-dark">
             <IconCode width={18} height={18} /> Abrir el editor
           </Link>
