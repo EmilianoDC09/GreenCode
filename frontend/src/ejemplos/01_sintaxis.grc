@@ -1,0 +1,7 @@
+>> Mi primera parcela
+&> Todo programa empieza con parcela
+   y termina con cosecha <&
+parcela hola_campo [
+  emitir "Hola, campo";
+]
+cosecha
