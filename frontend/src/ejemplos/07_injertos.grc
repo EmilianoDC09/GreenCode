@@ -1,0 +1,21 @@
+>> Los injertos se declaran antes de la parcela
+injerto deficit_agua (#actual tipo semilla, #objetivo tipo semilla) produce semilla [
+  monitorear (#actual debajo #objetivo)
+  florece [
+    fruto #objetivo - #actual;
+  ]
+  fruto 0;
+]
+
+injerto es_critica (#temp tipo clima) produce actuador [
+  fruto #temp supera 35.0;
+]
+
+parcela invernadero_sur [
+  brotar #faltante tipo semilla : deficit_agua(32, 50);
+  emitir "Litros que faltan: " + #faltante;
+
+  brotar #alarma tipo actuador : es_critica(37.2);
+  emitir "Temperatura crítica: " + #alarma;
+]
+cosecha

@@ -1,0 +1,17 @@
+>> Los cuatro tipos de datos de GreenCode
+parcela tipos_basicos [
+  brotar #temperatura tipo clima : 24.5;
+  brotar #minutos_riego tipo semilla : 15;
+  brotar #ventilador tipo actuador : apagado;
+  brotar #cultivo tipo contexto : "Jitomate";
+
+  >> Sin valor inicial, la variable brota con su valor por defecto
+  brotar #lecturas tipo semilla;
+
+  emitir "Cultivo: " + #cultivo;
+  emitir "Temperatura: " + #temperatura;
+  emitir "Minutos de riego: " + #minutos_riego;
+  emitir "Ventilador encendido: " + #ventilador;
+  emitir "Lecturas: " + #lecturas;
+]
+cosecha
