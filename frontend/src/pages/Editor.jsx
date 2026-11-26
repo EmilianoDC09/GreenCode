@@ -35,7 +35,8 @@ export default function Editor() {
   const location = useLocation();
   // Si se llega desde el tutorial ("Probar este ejemplo"), se usa ese código.
   const [codigo, setCodigo] = useState(() => normalizar(location.state?.code ?? ejemploInicial));
-  const [entrada, setEntrada] = useState('');
+  // ...y su entrada para captar, si la lección la trae.
+  const [entrada, setEntrada] = useState(() => normalizar(location.state?.input ?? ''));
   const [consola, setConsola] = useState(CONSOLA_INICIAL);
   const [resultado, setResultado] = useState(null);
   const [verTraza, setVerTraza] = useState(false);

@@ -21,8 +21,9 @@ export default function Tutorial() {
     }
   };
 
-  // "Probar este ejemplo" (J3).
-  const probar = () => navigate('/editor', { state: { code: leccion.codigo } });
+  // "Probar este ejemplo": abre el editor con el código y, si la lección usa captar, con su entrada.
+  const probar = () =>
+    navigate('/editor', { state: { code: leccion.codigo, input: leccion.entrada ?? '' } });
 
   return (
     <section className="tutorial">
@@ -77,6 +78,22 @@ export default function Tutorial() {
                   </div>
                   <CodeBlock code={leccion.codigo} className="lesson-code-body" />
                 </div>
+                {(leccion.entrada || leccion.salida) && (
+                  <div className="lesson-io">
+                    {leccion.entrada && (
+                      <div className="lesson-io-box">
+                        <span className="lesson-io-label">Entrada para captar</span>
+                        <pre>{leccion.entrada.trimEnd()}</pre>
+                      </div>
+                    )}
+                    {leccion.salida && (
+                      <div className="lesson-io-box">
+                        <span className="lesson-io-label">Salida en la consola</span>
+                        <pre>{leccion.salida.join('\n')}</pre>
+                      </div>
+                    )}
+                  </div>
+                )}
                 <button type="button" className="btn btn-primary lesson-try" onClick={probar}>
                   <IconPlay width={16} height={16} /> Probar este ejemplo
                 </button>
