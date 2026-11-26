@@ -1,0 +1,20 @@
+>> captar lee del campo Entrada; emitir muestra en la consola
+parcela lectura_sensor [
+  brotar #lote tipo contexto;
+  brotar #temp tipo clima;
+
+  captar #lote;
+  captar #temp;
+
+  emitir "Lote: " + #lote;
+  emitir "Temperatura leída: " + #temp;
+
+  monitorear (#temp supera 30.0)
+  florece [
+    emitir "Abrir ventilas de " + #lote;
+  ]
+  reposo [
+    emitir "Temperatura estable";
+  ]
+]
+cosecha
