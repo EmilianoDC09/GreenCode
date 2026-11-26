@@ -1,0 +1,15 @@
+>> regar repite mientras la condición sea cierta
+parcela ciclos [
+  brotar #humedad tipo semilla : 20;
+
+  regar (#humedad debajo 50) [
+    nutrir #humedad : #humedad + 10;
+    emitir "Regando... humedad: " + #humedad;
+  ]
+
+  >> madurar cuenta de un valor a otro; #dia no necesita brotar
+  madurar (#dia desde 1 hasta 7 paso 2) [
+    emitir "Revisión del día " + #dia;
+  ]
+]
+cosecha

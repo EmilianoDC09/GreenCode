@@ -1,0 +1,28 @@
+>> Asignación con nutrir y operadores
+parcela operadores [
+  brotar #temp tipo clima : 22.0;
+  brotar #humedad tipo semilla : 45;
+  brotar #riegos tipo semilla : 2;
+
+  >> Aritméticos: + - * /
+  nutrir #temp : #temp + 4.5;
+  nutrir #riegos : #riegos * 3;
+  emitir "Temperatura: " + #temp;
+  emitir "Riegos del día: " + #riegos;
+
+  >> Relacionales: supera (>), debajo (<), coincide (==), difiere (!=)
+  brotar #calor tipo actuador : #temp supera 25.0;
+  brotar #seco tipo actuador : #humedad debajo 40;
+  brotar #seis_riegos tipo actuador : #riegos coincide 6;
+
+  >> Lógicos: fusion (y), relevo (o), no (negación)
+  brotar #alerta tipo actuador : #calor fusion #seco;
+  brotar #revisar tipo actuador : #calor relevo no #seco;
+
+  emitir "Hace calor: " + #calor;
+  emitir "Suelo seco: " + #seco;
+  emitir "Seis riegos: " + #seis_riegos;
+  emitir "Alerta (calor y suelo seco): " + #alerta;
+  emitir "Revisar: " + #revisar;
+]
+cosecha

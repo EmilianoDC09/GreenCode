@@ -50,4 +50,4 @@ Ejecuta un programa GreenCode con el intérprete original (ANTLR4 + `greenCodeCu
 ## Interfaces del frontend
 
 - **Ejemplos del tutorial (Jesús):** `frontend/src/ejemplos/NN_nombre.grc`, importados en `lessons.js` con `?raw`. La prueba JUnit de E4 recorre esa carpeta.
-- **Código al Editor (envía Jesús, recibe Emiliano):** `navigate('/editor', { state: { code } })`. El Editor lee `location.state?.code` y, si no hay, carga el ejemplo inicial.
+- **Código al Editor (envía Jesús, recibe Emiliano):** `navigate('/editor', { state: { code, input } })`. El Editor lee `location.state?.code` (si no hay, carga el ejemplo inicial) y `location.state?.input` para el campo Entrada de `captar` (vacío si no hay).

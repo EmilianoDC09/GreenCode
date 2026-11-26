@@ -1,0 +1,21 @@
+>> monitorear decide entre tres caminos
+parcela control_humedad [
+  brotar #humedad tipo semilla : 55;
+  brotar #bomba tipo actuador : apagado;
+
+  monitorear (#humedad debajo 30)
+  florece [
+    nutrir #bomba : encendido;
+    emitir "Suelo muy seco: riego largo";
+  ]
+  marchita (#humedad debajo 60) [
+    nutrir #bomba : encendido;
+    emitir "Suelo seco: riego corto";
+  ]
+  reposo [
+    emitir "Humedad adecuada: sin riego";
+  ]
+
+  emitir "Bomba encendida: " + #bomba;
+]
+cosecha
